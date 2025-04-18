@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import io from 'socket.io-client'
 import { Chat } from './Chat'
-import music from './assets/lumia-950-ringtone-66659.mp3';
+import music from './assets/iphone-sms-tone-original-mp4-5732.mp3';
 
 
 const socket = io.connect("http://localhost:1000")

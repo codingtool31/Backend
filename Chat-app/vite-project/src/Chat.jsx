@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import music from './assets/lumia-950-ringtone-66659.mp3'
+import music from './assets/iphone-sms-tone-original-mp4-5732.mp3'
 
 export const Chat = ({ socket, username, room }) => {
     const [currentMessage, setcurrentMessage] = useState("");
