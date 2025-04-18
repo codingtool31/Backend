@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form method="POST" action="/products/<%= product._id %>">
+        <input type="text" name="productName" value="<%= product.productName %>" required><br>
+        <input type="number" name="productPrice" value="<%= product.productPrice %>" required><br>
+        <input type="text" name="currencyCode" value="<%= product.currencyCode %>" required><br>
+        <input type="number" name="numberOfSale" value="<%= product.numberOfSale %>" required><br>
+        <input type="number" name="rating" value="<%= product.rating %>" required><br>
+        <select name="isFreeShipping">
+            <option value="true" <%= product.isFreeShipping ? "selected" : "" %>>Free Shipping</option>
+            <option value="false" <%= !product.isFreeShipping ? "selected" : "" %>>No Free Shipping</option>
+        </select><br>
+        <input type="text" name="shopName" value="<%= product.shopName %>" required><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

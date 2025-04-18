@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>New Product</h1>
+    <form action="/products" method="POST">
+        <input type="text" name="productName" placeholder="Product Name" required><br>
+        <input type="number" name="productPrice" placeholder="Price" required><br>
+        <input type="text" name="currencyCode" placeholder="Currency Code" required><br>
+        <input type="number" name="numberOfSale" placeholder="Sales" required><br>
+        <input type="number" name="rating" placeholder="Rating" required><br>
+        <select name="isFreeShipping">
+            <option value="true">Free Shipping</option>
+            <option value="false">No Free Shipping</option>
+        </select><br>
+        <input type="text" name="shopName" placeholder="Shop Name" required><br>
+        <button type="submit">Add Product</button>
+    </form>
+</body>
+</html>
