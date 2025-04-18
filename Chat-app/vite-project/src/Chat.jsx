@@ -48,50 +48,42 @@ export const Chat = ({ socket, username, room }) => {
 
     return (
         <>
-            <div className="chat_container">
-                <h1>Welcome {username}</h1>
-                <div className="chat_box">
-                    <div
-                        className="auto-scrolling-div"
-                        ref={containRef}
-                        style={{
-                            height: "450px",
-                            overflowY: "auto",
-                            border: "2px solid yellow",
-                        }}
-                    >
-                        {messageList.map((data) => (
-                            <div
-                                key={data.id}
-                                className="message_content"
-                                id={username == data.author ? "you" : "other"}
-                            >
-                                <div>
-                                    <div className="msg" id={username == data.author ? "y" : "b"}>
-                                        <p>{data.message}</p>
-                                    </div>
-                                    <div className="msg_detail">
-                                        <p>{data.author}</p>
-                                        <p>{data.time}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="chat_body">
-                        <input
-                            value={currentMessage}
-                            type="text"
-                            placeholder="Type Your Message"
-                            onChange={(e) => setcurrentMessage(e.target.value)}
-                            onKeyPress={(e) => {
-                                e.key === "Enter" && sendMessage();
-                            }}
-                        />
-                        <button onClick={sendMessage}>&#9658;</button>
-                    </div>
-                </div>
-            </div>
+            <div className="chat_container123">
+  <div className="chat_header123">
+    <h2>Welcome {username}</h2>
+  </div>
+
+  <div className="chat_box123" ref={containRef}>
+    {messageList.map((data) => (
+      <div
+        key={data.id}
+        className={`message_content123 ${username === data.author ? "me123" : "them123"}`}
+      >
+        <div className="msg_bubble123">
+          <p className="text123">{data.message}</p>
+          <div className="msg_meta123">
+            <span>{data.author}</span>
+            <span>{data.time}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="chat_input123">
+    <input
+      value={currentMessage}
+      type="text"
+      placeholder="Type your message..."
+      onChange={(e) => setcurrentMessage(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+    />
+    <button onClick={sendMessage}>
+      <i className="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
+
         </>
     );
 };
